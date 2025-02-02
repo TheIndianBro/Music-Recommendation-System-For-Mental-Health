@@ -1,0 +1,119 @@
+import pandas as pd
+
+# Load the dataset
+file_path = "/mnt/data/dscp.csv"
+df = pd.read_csv(file_path)
+
+# Display basic information about the dataset
+df.info(), df.head()
+
+RangeIndex: 736 entries, 0 to 735
+Data columns (total 33 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   Timestamp                     736 non-null    object 
+ 1   Age                           735 non-null    float64
+ 2   Primary streaming service     735 non-null    object 
+ 3   Hours per day                 736 non-null    float64
+ 4   While working                 733 non-null    object 
+ 5   Instrumentalist               732 non-null    object 
+ 6   Composer                      735 non-null    object 
+ 7   Fav genre                     736 non-null    object 
+ 8   Exploratory                   736 non-null    object 
+ 9   Foreign languages             732 non-null    object 
+ 10  BPM                           629 non-null    float64
+ 11  Frequency [Classical]         736 non-null    object 
+ 12  Frequency [Country]           736 non-null    object 
+ 13  Frequency [EDM]               736 non-null    object 
+ 14  Frequency [Folk]              736 non-null    object 
+ 15  Frequency [Gospel]            736 non-null    object 
+ 16  Frequency [Hip hop]           736 non-null    object 
+ 17  Frequency [Jazz]              736 non-null    object 
+ 18  Frequency [K pop]             736 non-null    object 
+ 19  Frequency [Latin]             736 non-null    object 
+ 20  Frequency [Lofi]              736 non-null    object 
+ 21  Frequency [Metal]             736 non-null    object 
+ 22  Frequency [Pop]               736 non-null    object 
+ 23  Frequency [R&B]               736 non-null    object 
+ 24  Frequency [Rap]               736 non-null    object 
+ 25  Frequency [Rock]              736 non-null    object 
+ 26  Frequency [Video game music]  736 non-null    object 
+ 27  Anxiety                       736 non-null    float64
+ 28  Depression                    736 non-null    float64
+ 29  Insomnia                      736 non-null    float64
+ 30  OCD                           736 non-null    float64
+ 31  Music effects                 728 non-null    object 
+ 32  Permissions                   736 non-null    object 
+dtypes: float64(7), object(26)
+memory usage: 189.9+ KB
+Result
+(None,
+             Timestamp   Age Primary streaming service  Hours per day  \
+ 0  8/27/2022 19:29:02  18.0                   Spotify            3.0   
+ 1  8/27/2022 19:57:31  63.0                   Pandora            1.5   
+ 2  8/27/2022 21:28:18  18.0                   Spotify            4.0   
+ 3  8/27/2022 21:40:40  61.0             YouTube Music            2.5   
+ 4  8/27/2022 21:54:47  18.0                   Spotify            4.0   
+ 
+   While working Instrumentalist Composer         Fav genre Exploratory  \
+ 0           Yes             Yes      Yes             Latin         Yes   
+ 1           Yes              No       No              Rock         Yes   
+ 2            No              No       No  Video game music          No   
+ 3           Yes              No      Yes              Jazz         Yes   
+ 4           Yes              No       No               R&B         Yes   
+ 
+   Foreign languages  ...  Frequency [R&B]  Frequency [Rap] Frequency [Rock]  \
+ 0               Yes  ...        Sometimes  Very frequently            Never   
+ 1                No  ...        Sometimes           Rarely  Very frequently   
+ 2               Yes  ...            Never           Rarely           Rarely   
+ 3               Yes  ...        Sometimes            Never            Never   
+ 4                No  ...  Very frequently  Very frequently            Never   
+ 
+   Frequency [Video game music] Anxiety Depression Insomnia  OCD Music effects  \
+ 0                    Sometimes     3.0        0.0      1.0  0.0           NaN   
+ 1                       Rarely     7.0        2.0      2.0  1.0           NaN   
+ 2              Very frequently     7.0        7.0     10.0  2.0     No effect   
+ 3                        Never     9.0        7.0      3.0  3.0       Improve   
+ 4                       Rarely     7.0        2.0      5.0  9.0       Improve   
+ 
+      Permissions  
+ 0  I understand.  
+ 1  I understand.  
+ 2  I understand.  
+ 3  I understand.  
+ 4  I understand.  
+
+
+Dataset Description
+This dataset contains 736 entries and 33 columns, primarily focused on music listening habits, preferences, and psychological well-being.
+
+Key Features:
+Demographics & Usage:
+
+Age: Age of the respondent.
+Primary streaming service: The preferred music streaming platform (e.g., Spotify, YouTube Music, Pandora).
+Hours per day: Time spent listening to music daily.
+While working: Whether the respondent listens to music while working.
+Musical Preferences & Habits:
+
+Instrumentalist & Composer: Indicates if the respondent plays an instrument or composes music.
+Fav genre: Favorite music genre.
+Exploratory: Whether they explore new music.
+Foreign languages: If they listen to music in foreign languages.
+Listening Frequency by Genre:
+
+Includes columns like Frequency [Classical], Frequency [Hip hop], Frequency [Jazz], etc., indicating how often a respondent listens to each genre.
+Psychological Well-being:
+
+Anxiety, Depression, Insomnia, OCD: Self-reported mental health scores.
+Music effects: The perceived impact of music on mood and mental health.
+Additional Fields:
+
+BPM: Preferred beats per minute (missing values present).
+Permissions: A consent statement.
+Data Quality Observations:
+Some missing values in Age, Instrumentalist, Composer, Foreign languages, BPM, and Music effects.
+Mix of categorical and numerical data.
+Mental health attributes are numerical scores.
+
+
